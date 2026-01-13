@@ -1,6 +1,5 @@
 // dictionary.c in speller
 
-
 // Implements a dictionary's functionality
 
 #include <ctype.h>
