@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <!-- Title -->
+    <div id="title-container">
+        <img src="{{ url_for('static', filename='youtube.svg') }}" alt="YouTube Logo">
+        <h1>YouTube Scraper</h1>
+    </div>
+
+    <!-- Scrape another page -->
+    <a href="{{ url_for('home') }}" class="anchor">
+        <button id="home-button">Scrape another</button>
+    </a>
+
+    <!-- Download as csv -->
+    <a href="{{ url_for('download_file') }}" class="anchor">
+        <button id="download-button">Download CSV</button>
+    </a>
+
+    <!-- Display results in table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                {% for key in data[0].keys() %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    {% for value in item.values() %}
+                        <td>
+                            {% if loop.first %}
+                                <img src="{{ value }}" alt="Thumbnail">
+                            {% else %}
+                                {{ value }}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

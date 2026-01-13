@@ -1,0 +1,24 @@
+10 HTML tags
+- nav
+- ul
+- li
+- a
+- img
+- footer
+- hr
+- form
+- label
+- input
+
+5 CSS properties
+- display: flex;
+- justify-content: space-around;
+- align-items: center;
+- padding: 20px;
+- text-decoration: none;
+
+JavaScript
+- I used JavaScript to display the current time and update it constantly on the home page.
+
+Bootstrap
+- I used Bootstrap to style my form element in contact.html.

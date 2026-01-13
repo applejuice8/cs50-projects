@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Scraping
+{% endblock %}
+
+{% block body %}
+
+    <div class="center">
+        <div id="title-container">
+            <img src="{{ url_for('static', filename='youtube.svg') }}" alt="YouTube Logo">
+            <h1>YouTube Scraper</h1>
+        </div>
+        <div id="loader">Scraping...</div>
+    </div>
+
+    <form id="auto-submit" action="/scrape" method="GET">
+        <input type="hidden" name="url" value="{{ url }}">
+    </form>
+
+    <script>
+        document.getElementById('auto-submit').submit();
+    </script>
+
+{% endblock %}

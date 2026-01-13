@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <div class="center">
+        <!-- Title -->
+        <div id="title-container">
+            <img src="{{ url_for('static', filename='youtube.svg') }}" alt="YouTube Logo">
+            <h1>YouTube Scraper</h1>
+        </div>
+
+        <!-- Prompt url -->
+        <form action="/loading" method="GET" onsubmit="return validateForm(event)">
+            <label for="url">Enter URL to scrape:</label><br>
+            <input autofocus type="text" id="url" name="url" placeholder="https://www.youtube.com/@CHANNEL-NAME/videos" required>
+            <button type="submit">Scrape</button>
+        </form>
+
+        <!-- Error Message -->
+        <div id="error-message" class="hidden">Invalid URL (https://www.youtube.com/@CHANNEL-NAME/videos)</div>
+    </div>
+
+{% endblock %}

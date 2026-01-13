@@ -1,0 +1,21 @@
+1. If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+- Spotify uses the average values of energy, valence and danceability to determine a user's audio aura.
+- We do not need "LIMIT 100" at the end of the sql statement since songs.db only contains the top 100 songs.
+
+SELECT AVG(energy) AS avg_energy,
+    AVG(valence) AS avg_valence,
+    AVG(danceability) AS avg_danceability
+    FROM songs;
+
+2. Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+- Include other columns to be more specific
+- This is the reason users like certain songs might not be related to the energy or valence. Maybe the user just like listening to songs with fast tempo.
+- However, I did not include the column "loudness", because I do not think it is relevant, since we can adjust our own volume. For example, a user might be listening to a song with great loudness, but he might be playing the song with only a volume of 1.
+
+SELECT AVG(energy) AS avg_energy,
+    AVG(valence) AS avg_valence,
+    AVG(danceability) AS avg_danceability,
+    AVG(key) AS avg_key,
+    AVG(speechiness) AS avg_speechiness,
+    AVG(tempo) AS avg_tempo
+    FROM songs;

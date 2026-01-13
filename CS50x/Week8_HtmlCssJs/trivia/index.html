@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+                let buttons = document.querySelectorAll('.mcq-button');
+                let ques1 = document.querySelector('#ques1');
+                let ques2 = document.querySelector('#ques2');
+                let textAns = document.querySelector('#text-ans');
+
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function(event) {
+                        // Remove old feedback
+                        let oldFeedback1 = document.querySelector('#feedback1');
+                        if (oldFeedback1) {
+                            oldFeedback1.remove();
+                        }
+
+                        // Set new feedback
+                        let feedback1 = '<p id="feedback1"></p>';
+                        if (button.innerText == 'Mars') {
+                            button.style.backgroundColor = 'green';
+                            feedback1 = '<p id="feedback1">Correct</p>';
+                        } else {
+                            button.style.backgroundColor = 'red';
+                            feedback1 = '<p id="feedback1">Incorrect</p>';
+                        }
+                        ques1.insertAdjacentHTML('afterend', feedback1);
+                    });
+                });
+
+                document.querySelector('#confirm').addEventListener('click', function() {
+                    // Remove old feedback
+                    let oldFeedback2 = document.querySelector('#feedback2');
+                    if (oldFeedback2) {
+                        oldFeedback2.remove();
+                    }
+
+                    // Set new feedback
+                    let feedback2 = '<p id="feedback2"></p>';
+                    if (textAns.value.toLowerCase() == 'france') {
+                        textAns.style.backgroundColor = 'green';
+                        feedback2 = '<p id="feedback2">Correct</p>';
+                    }
+                    else {
+                        textAns.style.backgroundColor = 'red';
+                        feedback2 = '<p id="feedback2">Incorrect</p>';
+                    }
+                    ques2.insertAdjacentHTML('afterend', feedback2);
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3 id="ques1">Which planet is known as the "Red Planet"?</h3>
+                 <button class="mcq-button">Venus</button>
+                 <button class="mcq-button">Jupiter</button>
+                 <button class="mcq-button">Mars</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3 id="ques2">What country is Paris in?</h3>
+                 <input type="text" id="text-ans">
+                 <button id="confirm">Confirm</button>
+            </div>
+        </div>
+    </body>
+</html>

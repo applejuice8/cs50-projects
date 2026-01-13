@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <form action="/greet" method="get">
+        <input type="text" name="name" placeholder="Name">
+        <button type="submit">Greet</button>
+    </form>
+
+    {% if name %}
+        <p>Hello, {{ name }}</p>
+    {% endif %}
+
+{% endblock %}

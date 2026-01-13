@@ -1,0 +1,38 @@
+sort1 uses: Bubble sort
+random5000    0.058
+random10000   0.0185
+random50000   5.568
+reversed5000  0.101
+reversed10000 0.257
+reversed50000 4.987
+sorted5000    0.022
+sorted10000   0.062
+sorted50000   0.424
+
+How do you know?: Bubble sort has the longest runtime in random50000 and reversed50000. However, it did well on sorted data, because it has the runtime of n in its best case, which is sorted data.
+
+sort2 uses: Merge sort
+random5000    0.022
+random10000   0.048
+random50000   0.432
+reversed5000  0.022
+reversed10000 0.045
+reversed50000 0.412
+sorted5000    0.021
+sorted10000   0.046
+sorted50000   0.478
+
+How do you know?: Merge sort has similar runtime for random / reversed / sorted data, since its runtime is theta of n log n.
+
+sort3 uses: Selection sort
+random5000    0.041
+random10000   0.127
+random50000   2.175
+reversed5000  0.062
+reversed10000 0.149
+reversed50000 2.459
+sorted5000    0.04
+sorted10000   0.127
+sorted50000   2.682
+
+How do you know?: Like merge sort, selection sort has similar runtime for random / reversed / sorted data. However, the increase in runtime as the size of data increases is exponentially higher.

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --color-primary: #EDC7B7;
+    --color-secondary: #EEE2DC;
+    --color-header: #eea586;
+    --color-button: #123C69;    
+    --color-button-text: white;
+    --color-hover: #5a81ad;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--color-hover);
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-button);
+    border-radius: 5px;
+}
+
+body {
+    background-color: var(--color-primary);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Title */
+#title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title-container h1 {
+    font-size: 300%;
+}
+
+#title-container img {
+    height: 100px;
+    width: auto;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+}
+
+/* Form */
+form {
+    text-align: center;
+    width: 100%;
+}
+
+form label {
+    font-size: 200%;
+}
+
+form input {
+    font-size: 120%;
+    width: 35%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--color-hover);
+    color: var(--color-button-text);
+    text-align: center;
+}
+
+form input::placeholder {
+    color: var(--color-primary);
+}
+
+form button {
+    font-size: 150%;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+#error-message {
+    color: red;
+    font-size: 1.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+form button:hover {
+    background-color: var(--color-hover);
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    margin: 1% 10% 10% 10%;
+    font-size: 120%;
+    
+}
+
+table, th, td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-color: var(--color-secondary);
+}
+
+/* Index */
+td:nth-child(1), th:nth-child(1) {
+    width: 5%;
+}
+
+/* Thumbnail */
+td:nth-child(2), th:nth-child(2) {
+    width: 30%;
+}
+
+/* Title */
+td:nth-child(3), th:nth-child(3) {
+    width: 30%;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: var(--color-header);
+}
+
+td:hover {
+    background-color: var(--color-hover);
+    color: var(--color-button-text);
+}
+
+table img {
+    margin: -10px; /* Cancels out the td padding */
+}
+
+.anchor {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Download button */
+#download-button {
+    font-size: 150%;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+}
+
+#download-button:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.1);
+    transition: transform 0.1s ease, color 0.3s ease;
+}
+
+#home-button {
+    font-size: 120%;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    color: var(--color-button);
+    background-color: var(--color-primary);
+    text-decoration: none;
+    margin: 10px;
+}
+
+#home-button:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+    transition: transform 0.1s ease;
+}
+
+/* Loader */
+#loader {
+    font-size: 400%;
+    text-align: center;
+    margin-top: 30px;
+    color: var(--color-button);
+}
